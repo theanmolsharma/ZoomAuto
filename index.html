@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ZoomAuto</title>
+  </head>
+  <body>
+    <h1>Welcome IIITians. ZoomAuto is here to save your pretty ass!</h1>
+
+    <p>
+
+    </p>
+
+
+    <script>
+
+    const PURL = "https://zoom.us/j/95928624855?pwd=MmJtRER4MlduVlpJU0RXeVNmN0hVZz09";
+    const MURL = "https://zoom.us/j/3136940467?pwd=QTRaclVLeFpWZW1vSHpoNEwxU1F4UT09";
+    const IURL = "https://zoom.us/j/92311038253?pwd=SFgrdHEzZC8rTERBK0pjSFdhZ3JNdz09";
+    const EURL = "https://zoom.us/j/3537783014?pwd=blplRGkrZSs2RjAyS2RlYmMxQ0RGdz09";
+
+    var P = false;
+    var M = false;
+    var E = false;
+    var I = false;
+
+    var auto_refresh = setInterval(function(){ joinMeeting(); }, 30000);
+
+    function joinMeeting()
+    {
+      var d = new Date();
+      var day = d.getDay();
+      var hours = d.getHours();
+      var min = d.getHours();
+      if((day == 1 && hours == 9 && min <= 59) || (day == 2 && hours == 12 && min <= 59) || (day == 4 && hours == 11 && min <= 59)) {
+        if(!P) {
+          window.open(PURL);
+          P = true;
+        }
+      }
+      else if((day == 1 && hours == 11 && min <= 59) || (day == 2 && hours == 9 && min <= 59) || (day == 4 && hours == 9 && min <= 59) && !M) {
+        if(!M){
+          window.open(MURL);
+          M = true;
+        }
+      }
+      else if((day == 3 && hours == 9 && min <= 59) || (day == 5 && hours == 9 && min <= 59) && !E) {
+        if(!E){
+          window.open(EURL);
+          E = true;
+        }
+      }
+      else if((day == 3 && hours == 10 && min <= 59) || (day == 5 && hours == 10 && min <= 59)) {
+        if(!I){
+          window.open(IURL);
+          I = true;
+        }
+      }
+    }
+    </script>
+
+  </body>
+</html>
