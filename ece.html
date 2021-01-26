@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>ZoomAuto</title>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 style="text-align: center">Welcome ECE students!!</h1>
+    </div>
+    <div class="col-lg-12">
+      <h1 style="text-align: center">ZoomAuto is here to save your pretty ass!!</h1>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="col-lg-12">
+    <h2 style="text-align: center">Hooray!! ZoomAuto will auto join your meetings now!!</h2>
+  </div>
+  <br />
+  <br />
+  <div class="col-lg-12">
+    <h2 style="text-align: center">Follow me if you find this useful!!</h2>
+  </div>
+  <div class="" style="text-align: center">
+    <button type="button" class="btn btn-primary" onclick="insta()">Instagram</button>
+    <button type="button" class="btn btn-primary" onclick="linkedin()">LinkedIn</button>
+    <button type="button" class="btn btn-primary" onclick="github()">Github</button>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+
+    function insta() {
+      window.open("https://www.instagram.com/theanmolsharma_/");
+    }
+    function linkedin() {
+      window.open("https://www.linkedin.com/in/anmol-sharma-a58559202/");
+    }
+    function github() {
+      window.open("https://github.com/theanmolsharma");
+    }
+
+    const PURL = "https://zoom.us/j/95928624855?pwd=MmJtRER4MlduVlpJU0RXeVNmN0hVZz09";
+    const MURL = "https://zoom.us/j/3136940467?pwd=QTRaclVLeFpWZW1vSHpoNEwxU1F4UT09";
+    const IURL = "https://zoom.us/j/92311038253?pwd=SFgrdHEzZC8rTERBK0pjSFdhZ3JNdz09";
+    const EURL = "https://zoom.us/j/3537783014?pwd=blplRGkrZSs2RjAyS2RlYmMxQ0RGdz09";
+
+    var P = false;
+    var M = false;
+    var E = false;
+    var I = false;
+
+    var auto_refresh = setInterval(function() {
+      joinMeeting();
+    }, 30000);
+
+    function joinMeeting() {
+      var d = new Date();
+      var day = d.getDay();
+      var hours = d.getHours();
+      var min = d.getHours();
+      if ((day == 1 && hours == 9 && min <= 59) || (day == 2 && hours == 12 && min <= 59) || (day == 4 && hours == 11 && min <= 59)) {
+        if (!P) {
+          window.open(PURL);
+          P = true;
+        }
+      } else if ((day == 1 && hours == 11 && min <= 59) || (day == 2 && hours == 9 && min <= 59) || (day == 4 && hours == 9 && min <= 59) && !M) {
+        if (!M) {
+          window.open(MURL);
+          M = true;
+        }
+      } else if ((day == 3 && hours == 9 && min <= 59) || (day == 5 && hours == 9 && min <= 59) && !E) {
+        if (!E) {
+          window.open(EURL);
+          E = true;
+        }
+      } else if ((day == 3 && hours == 10 && min <= 59) || (day == 5 && hours == 10 && min <= 59)) {
+        if (!I) {
+          window.open(IURL);
+          I = true;
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
